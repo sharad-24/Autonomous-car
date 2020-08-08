@@ -3,8 +3,8 @@
 #include<NewPing.h>
 
 //defining pins and variables
-#define left A1
-#define right A0
+#define left A0
+#define right A1
 #define TRIG A2 
 #define ECHO A3 
 #define MAX_DISTANCE 100 
@@ -40,15 +40,31 @@ if (distance == 0) {
 if(distance <=15) {
   Stop();
   delay(100);
-leftmove();
-delay(550);
+rightmove();
+delay(700);
 forward();
 delay(1000);
-rightmove();  
-delay(200);
+leftmove();  
+delay(1000);
 forward();
 delay(500);
 }
+//int Right = analogRead(A0);
+//    int Left = analogRead(A1);
+//    
+//    if(Right == 400 || Left == 400) {
+//      motor1.setSpeed(255);
+//      motor1.run(BACKWARD);
+//      motor2.setSpeed(255);
+//      motor2.run(BACKWARD);
+//      motor3.setSpeed(255);
+//      motor3.run(BACKWARD);
+//      motor4.setSpeed(255);
+//      motor4.run(BACKWARD);
+//      
+//    }
+//      
+    
 
 
   //line detected by none
@@ -110,13 +126,13 @@ delay(500);
 void forward()
 {
      motor1.run(FORWARD);
-     motor1.setSpeed(200);
+     motor1.setSpeed(150);
   motor2.run(FORWARD);
-  motor2.setSpeed(200);
+  motor2.setSpeed(150);
   motor3.run(FORWARD);
-  motor3.setSpeed(200);
+  motor3.setSpeed(150);
   motor4.run(FORWARD);
-  motor4.setSpeed(200);
+  motor4.setSpeed(150);
 }
 
 void backward()
